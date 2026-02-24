@@ -29,6 +29,10 @@ add_library(miner_core
 target_include_directories(miner_core PUBLIC include)
 target_compile_options(miner_core PRIVATE -Wall -Wextra -Wpedantic)
 
+if(WIN32)
+  target_link_libraries(miner_core PUBLIC ws2_32)
+endif()
+
 add_executable(miner src/main.cpp)
 target_link_libraries(miner PRIVATE miner_core)
 
