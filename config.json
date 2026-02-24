@@ -1,0 +1,26 @@
+{
+  "log_file": "miner.log",
+  "log_level": "info",
+  "active_pool": 0,
+  "perf": {
+    "cpu_threads": 2,
+    "batch_size": 2048,
+    "queue_depth": 4096
+  },
+  "sv2": {
+    "mode": "cleartext",
+    "device_id": "cpu-demo",
+    "work_selection": false,
+    "version_rolling": false
+  },
+  "pools": [
+    {
+      "name": "local",
+      "host": "127.0.0.1",
+      "port": 3336,
+      "tls": false,
+      "user": "worker1",
+      "password": "x"
+    }
+  ]
+}
