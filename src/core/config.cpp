@@ -35,7 +35,14 @@ void applyOverride(AppConfig& cfg, const std::string& kv) {
   if (key == "perf.cpu_threads") cfg.perf.cpuThreads = std::stoul(val);
   else if (key == "perf.batch_size") cfg.perf.batchSize = std::stoul(val);
   else if (key == "active_pool") cfg.activePoolIndex = std::stoul(val);
+  else if (key == "pool.name") cfg.pools[0].name = val;
+  else if (key == "pool.host") cfg.pools[0].host = val;
+  else if (key == "pool.port") cfg.pools[0].port = static_cast<std::uint16_t>(std::stoul(val));
+  else if (key == "pool.user") cfg.pools[0].user = val;
+  else if (key == "pool.password") cfg.pools[0].password = val;
+  else if (key == "pool.tls") cfg.pools[0].tls = (val == "1" || val == "true" || val == "on");
   else if (key == "sv2.mode") cfg.sv2.mode = val;
+  else if (key == "sv2.device_id") cfg.sv2.deviceId = val;
   else if (key == "log.level") cfg.logLevel = val;
 }
 } // namespace

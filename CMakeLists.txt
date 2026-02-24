@@ -15,6 +15,7 @@ add_library(miner_core
   src/sv2/framing.cpp
   src/sv2/messages.cpp
   src/sv2/session.cpp
+  src/sv2/client.cpp
   src/work/job.cpp
   src/work/merkle.cpp
   src/work/target.cpp

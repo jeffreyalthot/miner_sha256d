@@ -1,4 +1,6 @@
 #pragma once
+#include "miner/config.hpp"
+#include "miner/logging.hpp"
 #include "miner/common.hpp"
 #include <cstdint>
 #include <optional>
@@ -50,5 +52,7 @@ public:
 private:
   SessionState state_{SessionState::Disconnected};
 };
+
+bool connectAndSetup(const core::PoolProfile& pool, const core::SV2Config& sv2Cfg, core::Logger& logger);
 
 } // namespace miner::sv2
